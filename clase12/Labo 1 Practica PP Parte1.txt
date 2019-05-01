@@ -44,7 +44,6 @@ C)	Listar: Hacer un único listado de todos los
 menues ordenados por importe (descendente) y descripcion
  (ascendente).
 
-
 EMPLEADOS: 
 A)	Altas: No es necesario el ingreso de todos los
  empleados.
