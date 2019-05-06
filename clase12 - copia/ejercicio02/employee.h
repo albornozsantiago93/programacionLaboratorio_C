@@ -30,13 +30,14 @@ typedef struct{
 #define ESTADO_LIBRE 0
 
 int array_generarProximoId(void);
+int initEmployees(eEmployee* empleados,int cantidad);
+int addEmployee(eEmployee* empleados,int cantidad);
 int findEmployeeById(eEmployee* empleados,int cantidad,int id);
 int findIsEmpty(eEmployee* empleados,int cantidad);
 int removeEmployee(eEmployee* empleados,int cantidad,int id);
 void printListEmployee(eEmployee* emplead,int cantidadEmpleados,eSector* sectores);
 void printEmployee(eEmployee empleado,eSector* sectores,int cantidad);
 void administrarEmpleado(eEmployee* empleado,eSector* sectores,int cantidad);
-int initEmployees(eEmployee* empleados,int cantidad);
 int addEmployee(eEmployee* empleados,int cantidad);
 void hardcodearDatosEmpleados(eEmployee* empleado, int cantidad);
 

@@ -173,7 +173,7 @@
 	"menues.h"
 	"funcionesGet.h"
 
-1557150468 source:c:\programacionlaboratorio c\clase12\ejercicio02\almuerzos.c
+1556909444 source:c:\programacionlaboratorio c\clase12\ejercicio02\almuerzos.c
 	<stdio.h>
 	<stdlib.h>
 	<strings.h>
@@ -181,17 +181,17 @@
 	"almuerzos.h"
 	"funcionesGet.h"
 
-1557150424 c:\programacionlaboratorio c\clase12\ejercicio02\almuerzos.h
+1556903856 c:\programacionlaboratorio c\clase12\ejercicio02\almuerzos.h
 	"menues.h"
 	"employee.h"
 
 1556638955 c:\programacionlaboratorio c\clase12\ejercicio02\menues.h
 
-1557151307 c:\programacionlaboratorio c\clase12\ejercicio02\employee.h
+1556638745 c:\programacionlaboratorio c\clase12\ejercicio02\employee.h
 
 1556585880 c:\programacionlaboratorio c\clase12\ejercicio02\funcionesget.h
 
-1557109467 source:c:\programacionlaboratorio c\clase12\ejercicio02\employee.c
+1556909444 source:c:\programacionlaboratorio c\clase12\ejercicio02\employee.c
 	<stdio.h>
 	<stdlib.h>
 	<strings.h>
@@ -200,14 +200,14 @@
 	"menues.h"
 	"funcionesGet.h"
 
-1557172297 source:c:\programacionlaboratorio c\clase12\ejercicio02\funcionesget.c
+1556657343 source:c:\programacionlaboratorio c\clase12\ejercicio02\funcionesget.c
 	<stdio.h>
 	<stdlib.h>
 	<strings.h>
 	<time.h>
 	"funcionesGet.h"
 
-1557109363 source:c:\programacionlaboratorio c\clase12\ejercicio02\main.c
+1556904598 source:c:\programacionlaboratorio c\clase12\ejercicio02\main.c
 	<stdio.h>
 	<stdlib.h>
 	"almuerzos.h"
@@ -215,7 +215,57 @@
 	"menues.h"
 	"funcionesGet.h"
 
-1557089900 source:c:\programacionlaboratorio c\clase12\ejercicio02\menues.c
+1556909290 source:c:\programacionlaboratorio c\clase12\ejercicio02\menues.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"menues.h"
+	"funcionesGet.h"
+
+1557089645 source:c:\programacionlaboratorio c\clase12 - copia\ejercicio02\almuerzos.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"almuerzos.h"
+	"funcionesGet.h"
+
+1556903856 c:\programacionlaboratorio c\clase12 - copia\ejercicio02\almuerzos.h
+	"menues.h"
+	"employee.h"
+
+1556638955 c:\programacionlaboratorio c\clase12 - copia\ejercicio02\menues.h
+
+1556638745 c:\programacionlaboratorio c\clase12 - copia\ejercicio02\employee.h
+
+1556585880 c:\programacionlaboratorio c\clase12 - copia\ejercicio02\funcionesget.h
+
+1556909444 source:c:\programacionlaboratorio c\clase12 - copia\ejercicio02\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"employee.h"
+	"menues.h"
+	"funcionesGet.h"
+
+1556657343 source:c:\programacionlaboratorio c\clase12 - copia\ejercicio02\funcionesget.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"funcionesGet.h"
+
+1557089453 source:c:\programacionlaboratorio c\clase12 - copia\ejercicio02\main.c
+	<stdio.h>
+	<stdlib.h>
+	"almuerzos.h"
+	"employee.h"
+	"menues.h"
+	"funcionesGet.h"
+
+1557089453 source:c:\programacionlaboratorio c\clase12 - copia\ejercicio02\menues.c
 	<stdio.h>
 	<stdlib.h>
 	<strings.h>

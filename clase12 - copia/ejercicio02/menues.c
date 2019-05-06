@@ -21,12 +21,14 @@ int array_generarProximoIdMenues(void)
 }
 
 
-/** \brief encuentra por id un dato de la estructura
+ /** \brief find an Employee by Id en returns the index position in array.
  *
- * \param eEmployee empleado, estructura de empleados
- * \param int cantidad, largo de array
- * \param int id, referencia a buscar
- * \return int  (-1)  - Numero id !=-1
+ * \param list Employee*
+ * \param len int
+ * \param id int
+ * \return Return employee index position or (-1) if [Invalid length or NULL
+pointer received or employee not found]
+ *
  */
 int findMenuById(eMenu* menues,int cantidadMenues,int id)
  {
@@ -46,10 +48,14 @@ int findMenuById(eMenu* menues,int cantidadMenues,int id)
  }
 
 
- /** \brief encuentra un lugar disponible en el array
- * \param eEmployee empleado, estructura de empleados
- * \param int cantidad, largo de array
- * \return int  (-1)  - Numero !=-1 (ubicacion disponible en array)
+  /** \brief find an Employee by Id en returns the free place position in array.
+ *
+ * \param list Employee*
+ * \param len int
+ * \param id int
+ * \return Return employee index position or (-1) if [Invalid length or NULL
+pointer received or employee not found]
+ *
  */
 int menu_findIsEmpty(eMenu* menues,int cantidad)
  {
@@ -69,10 +75,13 @@ int menu_findIsEmpty(eMenu* menues,int cantidad)
  }
 
 
-/** \brief inicializa el estado de un array
- * \param eEmployee empleado, estructura de empleados
- * \param int cantidad, largo de array
- * \return int (-1) Error  - (0)  Ok
+  /** \brief To indicate that all position in the array are empty,
+ * this function put the flag (isEmpty) in TRUE in all
+ * position of the array
+ * \param list Employee* Pointer to array of employees
+ * \param len int Array length
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ *
  */
  int initMenues(eMenu* menues,int cantidadMenues)
  {
@@ -87,10 +96,12 @@ int menu_findIsEmpty(eMenu* menues,int cantidad)
  }
 
 
-/** \brief ordena los elemento de la estructura
+   /** \brief ordena los elemento de la estructura
  * \param list employee*
  * \param cantidad int
- * \return void
+ * \param id int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or without free space] - (0) if Ok
+ *
  */
  void ordenarMenues(eMenu* menues,int cantidadMenues)
 {
@@ -112,11 +123,11 @@ int menu_findIsEmpty(eMenu* menues,int cantidad)
 }
 
 
- /** \brief modifica los datos de un menu en la estructura
- * \param eMenu menues, estructura de empleados
- * \param int cantidad de array
+ /** \brief modifica datos en el arrey de menues
+ * \param list employee*
+ * \param cantidad int
  * \param id int
- * \return int Return (-1)Error o (0) Ok
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or without free space] - (0) if Ok
  *
  */
 int modificarMenu(eMenu* menues, int cantidadMenues,int idAux)
@@ -151,11 +162,13 @@ int modificarMenu(eMenu* menues, int cantidadMenues,int idAux)
 }
 
 
- /** \brief realiza una baja logica colocando el estado en LIBRE
- * \param eMenu menues, estructura de empleados
- * \param int cantidad, largo de array
+ /** \brief Remove a Employee by Id (put isEmpty Flag in 1)
+ *
+ * \param list Employee*
+ * \param len int
  * \param id int
- * \return int  ERROR(-1)  - (0)  Ok
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't find a employee] - (0) if Ok
+ *
  */
 int removeMenu(eMenu* menues,int cantidadMenues,int id)
  {
@@ -176,10 +189,12 @@ int removeMenu(eMenu* menues,int cantidadMenues,int id)
  }
 
 
-/** \brief da por alta un menu en la estructura de eMenu
- * \param eMenu menues, estructura de empleados
- * \param int cantidad, largo de array
- * \return int  (-1)  - (0)  Ok
+/** \brief add in a existing list of employees the values received as parameters
+ * in the first empty position
+ * \param list employee*
+ * \param len int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or without free space] - (0) if Ok
+ *
  */
 int addMenu(eMenu* menues,int cantidad)
 {
@@ -203,10 +218,11 @@ int addMenu(eMenu* menues,int cantidad)
 }
 
 
- /** \brief calcula el total de los importes
- * \param eMenu menues, estructura de menues
- * \param int cantidadMenues, largo de array
- * \return float, importe totales
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
  *
  */
 float totalImporteMenues(eMenu* menues,int cantidadMenues)
@@ -224,10 +240,12 @@ float totalImporteMenues(eMenu* menues,int cantidadMenues)
 }
 
 
- /** \brief calcula el promedio de los importes
- * \param eMenu menues, estructuras de menues
- * \param int cantidadMenues, largo de array
- * \return float, promedio de los menues
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 float promedioImporteMenues(eMenu* menues,int cantidadMenues)
 {
@@ -246,10 +264,12 @@ float promedioImporteMenues(eMenu* menues,int cantidadMenues)
 }
 
 
- /** \brief administra un menu, alta baja modificar y listar
- * \param eMenu menues, estructura de menu
- * \param int cantidad array de empleados
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void administrarMenues(eMenu* menues, int cantidadMenues)
 {
@@ -318,7 +338,7 @@ void administrarMenues(eMenu* menues, int cantidadMenues)
             case 4://IMPRIMIR
                 system("cls");
                 ordenarMenues(menues,cantidadMenues);
-                printf("ID\tPRECIO\t\tDESCRIPCION\n\n");
+                printf("ID\tPRECIO\t\tDESCRIPCION\n");
                 for(i=0;i<cantidadMenues;i++)
                 {
                     if(menues[i].isEmpty==ESTADO_OCUPADO)
@@ -333,10 +353,12 @@ void administrarMenues(eMenu* menues, int cantidadMenues)
 }
 
 
- /** \brief carga datos hardcodeados en la estructura de menues
- * \param eMenu menues, estructura de empleados
- * \param int cantidad, largo de array
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void hardcodearMenu(eMenu* menu,int cantidad)
 {

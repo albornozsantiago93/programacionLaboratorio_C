@@ -5,8 +5,8 @@
 #include "menues.h"
 #include "funcionesGet.h"
 #define CANTIDAD_EMPLEADOS 15
-#define CANTIDAD_MENUES 7
-#define CANTIDAD_ALMUERZOS 10
+#define CANTIDAD_MENUES 10
+#define CANTIDAD_ALMUERZOS 15
 
 int main()
 {
@@ -30,7 +30,7 @@ int main()
     {
         system("cls");
         printf("\t-MENU PRINCIPAL-\n");
-        opcion= getValidIntOpcion("\n1-ADMINISTRAR EMPLEADOS\n2-ADMINISTRAR MENUES\n3-ADMINISTRAR ALMUERZOS\n4-INFORMAR IMPORTES\n5-SALIR\n","ERROR\nOPCION NO VALIDA",1,5);
+        opcion= getValidIntOpcion("\n1-ADMINISTRAR EMPLEADOS\n2-ADMINISTRAR MENUES\n3-ADMINISTRAR ALMUERZOS\n4-INFORMAR\n5-SALIR\n","ERROR\nOPCION NO VALIDA",1,5);
 
         switch(opcion)
         {
@@ -51,7 +51,7 @@ int main()
 
         case 4://INFORMAR
             system("cls");
-            printf("\t\tINFORMES\n\n");
+            printf("\t\tINFORME\n\n");
 
             promedio= promedioImporteMenues(arrayMenues,CANTIDAD_MENUES);
             total= totalImporteMenues(arrayMenues,CANTIDAD_MENUES);
@@ -72,6 +72,5 @@ int main()
                 break;
         }
     }while(opcion!=5);
-
     return 0;
 }

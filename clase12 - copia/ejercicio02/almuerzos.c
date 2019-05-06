@@ -21,10 +21,13 @@ int array_generarProximoIdAlmuerzos(void)
     return idAutoincrementable;
 }
 
-/** \brief inicializa el estado de un array
- * \param eAlmuerzos almuerzos, estructura de almuerzos
- * \param int cantidad, largo de array
- * \return int (-1) Error  - (0)  Ok
+/** \brief To indicate that all position in the array are empty,
+ * this function put the flag (isEmpty) in TRUE in all
+ * position of the array
+ * \param list Employee* Pointer to array of employees
+ * \param len int Array length
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ *
  */
 int initAlmuerzos(eAlmuerzo* almuerzos,int cantidadAlmuerzos)
 {
@@ -41,11 +44,15 @@ int initAlmuerzos(eAlmuerzo* almuerzos,int cantidadAlmuerzos)
 }
 
 
- /** \brief encuentra un lugar disponible en el array
- * \param eAlmuerzos almuerzos, estructura de almuerzos
- * \param int cantidad, largo de array
- * \return int  (-1)  - Numero !=-1 (ubicacion disponible en array)
- */
+/** \brief find an Employee by Id en returns the free place position in array.
+*
+* \param list Employee*
+* \param len int
+* \param id int
+* \return Return employee index position or (-1) if [Invalid length or NULL
+pointer received or employee not found]
+*
+*/
 int almuerzo_findIsEmpty(eAlmuerzo* almuerzos,int cantidadAlmuerzos)
 {
     int i,retorno=-1;
@@ -63,11 +70,12 @@ int almuerzo_findIsEmpty(eAlmuerzo* almuerzos,int cantidadAlmuerzos)
     return retorno;
 }
 
-
- /** \brief imprime lista de menues
- * \param eAlmuerzos almuerzos, estructura de almuerzos
- * \param int cantidad, largo de array
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void printListMenues(eMenu* menues,int cantidadMenues)
 {
@@ -84,11 +92,12 @@ void printListMenues(eMenu* menues,int cantidadMenues)
     }
 }
 
-
- /** \brief cuenta la cantidad de menues qe no superan los 125
- * \param eAlmuerzos almuerzos, estructura de almuerzos
- * \param int cantidad, largo de array
- * \return int, cantidad de menues que no superan los 125
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 int menuesMenores125(eMenu* menues,int cantidadMenues)
 {
@@ -107,11 +116,12 @@ int menuesMenores125(eMenu* menues,int cantidadMenues)
     return contadorMenores125;
 }
 
-
- /** \brief cuenta la cantidad de menues que superan los 125
- * \param eAlmuerzos almuerzos, estructura de almuerzos
- * \param int cantidad, largo de array
- * \return int, cantidad de menues que superan los 125
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 int menuesMayores125(eMenu* menues,int cantidadMenues)
 {
@@ -131,14 +141,12 @@ int menuesMayores125(eMenu* menues,int cantidadMenues)
 }
 
 
-/** \brief da por alta un almuerzo en la estructura
- * \param eAlmuerzos almuerzos, estructura de almuerzos
- * \param eMenu menues, estructura de menu
- * \param eEmpleados empleados, estructura de empleados
- * \param int cantidadAlmuerzos, largo de array
- * \param int cantidadMenues, largo de array
- * \param int cantidadEmpleados, largo de array
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void altaAlmuerzos(eAlmuerzo* almuerzos,int cantidadAlmuerzos,eMenu* menues,eEmployee* empleados,int cantidadMenues,int cantidadEmpleados)
 {
@@ -157,15 +165,12 @@ void altaAlmuerzos(eAlmuerzo* almuerzos,int cantidadAlmuerzos,eMenu* menues,eEmp
     }
 }
 
-
-  /** \brief imprime por pantalla lista de empleados y su sector correspondiente
- * \param eAlmuerzos almuerzos, estructura de almuerzos
- * \param eMenu menues, estructura de menu
- * \param eEmpleados empleados, estructura de empleados
- * \param eSector sectores, array de sectores
- * \param int cantidadMenues, largo de array
- * \param int cantidadEmpleados, largo de array
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void listadoEmpleadoMenu(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuerzos, int cantidadEmpleados, int cantidadMenues)
 {
@@ -181,7 +186,7 @@ void listadoEmpleadoMenu(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuerz
             {
                 for(k=0; k<cantidadEmpleados; k++)
                 {
-                    if(empleados[k].isEmpty== 1  && almuerzos[j].idEmpleado == empleados[k].id)
+                    if(empleados[k].isEmpty== ESTADO_OCUPADO && menues[i].isEmpty==ESTADO_OCUPADO && almuerzos[j].idEmpleado == empleados[k].id)
                     {
                         printf("%d  %s %s\t\t-%s\n", empleados[k].id, empleados[k].name,empleados[k].lastName, menues[i].descripcion );
                     }
@@ -192,15 +197,12 @@ void listadoEmpleadoMenu(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuerz
 }
 
 
- /** \brief imprime por pantalla los menues consumidos por empleados
- * \param eAlmuerzos almuerzos, estructura de almuerzos
- * \param eMenu menues, estructura de menu
- * \param eEmpleados empleados, estructura de empleados
- * \param eSector sectores, array de sectores
- * \param int cantidadMenues, largo de array
- * \param int cantidadEmpleados, largo de array
- * \param int id, empleado
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void menuesConsumidosEmpleados(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuerzos, int cantidadEmpleados, int cantidadMenues,int idEmpleado)
 {
@@ -213,7 +215,7 @@ void menuesConsumidosEmpleados(eEmployee* empleados, eMenu* menues, eAlmuerzo* a
     {
         for(j=0; j<(cantidadEmpleados * cantidadMenues); j++)
         {
-            if(menues[i].idMenu == almuerzos[j].idMenu)
+            if(menues[i].idMenu == almuerzos[j].idAlmuerzo)
             {
                 for(k=0; k<cantidadEmpleados; k++)
                 {
@@ -229,15 +231,12 @@ void menuesConsumidosEmpleados(eEmployee* empleados, eMenu* menues, eAlmuerzo* a
 }
 
 
- /** \brief imprime por pantalla los menues consumidos por fecha
- * \param eAlmuerzos almuerzos, estructura de almuerzos
- * \param eMenu menues, estructura de menu
- * \param eEmpleados empleados, estructura de empleados
- * \param eSector sectores, array de sectores
- * \param int cantidadMenues, largo de array
- * \param int cantidadEmpleados, largo de array
- * \param  eFecha fecha, fecha buscar
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void menuesConsumidosFecha(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuerzos, int cantidadEmpleados, int cantidadMenues,eFechaAlmuerzo fecha)
 {
@@ -266,15 +265,12 @@ void menuesConsumidosFecha(eEmployee* empleados, eMenu* menues, eAlmuerzo* almue
 }
 
 
- /** \brief imprime por pantalla los empleados que consumieron esa fecha
- * \param eAlmuerzos almuerzos, estructura de almuerzos
- * \param eMenu menues, estructura de menu
- * \param eEmpleados empleados, estructura de empleados
- * \param eSector sectores, array de sectores
- * \param int cantidadMenues, largo de array
- * \param int cantidadEmpleados, largo de array
- * \param  eFecha fecha, fecha buscar
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void empleadosConsumieronFecha(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuerzos, int cantidadEmpleados, int cantidadMenues,eFechaAlmuerzo fecha)
 {
@@ -293,7 +289,7 @@ void empleadosConsumieronFecha(eEmployee* empleados, eMenu* menues, eAlmuerzo* a
                 {
                     if(empleados[k].isEmpty== ESTADO_OCUPADO && almuerzos[j].idEmpleado == empleados[k].id)
                     {
-                        if(almuerzos[j].fechaAlmuerzo.anio== fecha.anio && almuerzos[j].fechaAlmuerzo.mes== fecha.mes && almuerzos[j].fechaAlmuerzo.dia== fecha.dia)
+                        if(almuerzos[j].fechaAlmuerzo.anio== fecha.anio && almuerzos[j].fechaAlmuerzo.mes== fecha.mes && almuerzos[j].fechaAlmuerzo.dia== fecha.dia )
                             printf("%s %s\n",empleados[k].name,empleados[k].lastName);
                     }
                 }
@@ -304,39 +300,12 @@ void empleadosConsumieronFecha(eEmployee* empleados, eMenu* menues, eAlmuerzo* a
 
 
 
-/** \brief ordena los elemento de la estructura
- * \param list employee*
- * \param cantidad int
- * \return void
- */
- void menu_ordenarMenues(eMenu* menues,int cantidadMenues)
-{
-    int i,j;
-    eMenu aux;
-
-    for(i=0;i<cantidadMenues-1;i++)
-    {
-        for(j=i+1;j<cantidadMenues;j++)
-        {
-            if(menues[i].importe< menues[j].importe)
-            {
-                aux=menues[i];
-                menues[i]=menues[j];
-                menues[j]=aux;
-            }
-        }
-    }
-}
-
-
- /** \brief administra un almuerzo, alta baja modificar y listar
- * \param eAlmuerzos almuerzos, estructura de almuerzos
- * \param eMenu menues, estructura de menu
- * \param eEmpleados empleados, estructura de empleados
- * \param eSector sectores, array de sectores
- * \param int cantidadMenues, largo de array
- * \param int cantidadEmpleados, largo de array
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void administrarAlmuerzos(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuerzos, int cantidadEmpleados, int cantidadMenues,int cantidadAlmuerzos)
 {
@@ -348,6 +317,7 @@ void administrarAlmuerzos(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuer
         system("cls");
         printf("\tMENU -ALMUERZOS-\n\n");
         opcion=getValidIntOpcion("1-ALTA\n2-LISTAR - EMPLEADOS -MENU\n3-LISTAR - MENUES CONSUMIDOS POR UN EMPLEADO\n4-ALMUERZOS CONSUMIDOS POR FECHA\n5-EMPLEADOS QUE CONSUMIERDON ALMUERZO EN FECHA ESPECIFICA\n6-VOLVER\n","ERROR\nOPCION NO VALIDA",1,6);
+
         switch(opcion)
         {
         case 1:
@@ -358,13 +328,12 @@ void administrarAlmuerzos(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuer
         case 2:
             system("cls");
             listadoEmpleadoMenu(empleados,menues,almuerzos,cantidadEmpleados,cantidadMenues);
-            getChar("");
+            getChar("\nENTER PARA CONTINUAR\n");
             break;
 
         case 3:
             system("cls");
-            idAux= getValidIntOpcion("INGRESE ID DE EMPLEADO:\n","ERROR\nOPCION NO VALIDA",0,cantidadEmpleados);
-            menu_ordenarMenues(menues,cantidadMenues);
+            idAux= getValidIntOpcion("INGRESE ID DE EMPLEADO:\n","ERROR\nOPCION NO VALIDA",1,cantidadEmpleados);
             menuesConsumidosEmpleados(empleados,menues,almuerzos,cantidadEmpleados,cantidadMenues,idAux);
             getChar("");
             break;
@@ -386,17 +355,17 @@ void administrarAlmuerzos(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuer
             empleadosConsumieronFecha(empleados,menues,almuerzos,cantidadEmpleados,cantidadMenues,auxiliarFecha);
             getChar("");
             break;
-
         }
-    }
-    while(opcion!=6);
+    }while(opcion!=6);
 }
 
 
- /** \brief carga datos hardcodeados en la estructura de almuerzos
- * \param eAlmuerzo almuerzos, estructura de almuerzos
- * \param int cantidad, largo de array
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void hardcodearAlmuerzos(eAlmuerzo* almuerzos,int cantidadAlmuerzos)
 {
@@ -408,7 +377,7 @@ void hardcodearAlmuerzos(eAlmuerzo* almuerzos,int cantidadAlmuerzos)
     for(i=0; i<cantidadAlmuerzos; i++)
     {
         almuerzos[i].idAlmuerzo= array_generarProximoIdAlmuerzos();
-        almuerzos[i].idEmpleado=idEmpleado[i];
+        almuerzos[i].idEmpleado= idEmpleado[i];
         almuerzos[i].idMenu= idMenu[i];
         almuerzos[i].isEmpty= ESTADO_OCUPADO;
         almuerzos[i].fechaAlmuerzo= fecha;

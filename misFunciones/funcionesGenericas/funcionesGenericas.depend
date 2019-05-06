@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1557170565 source:c:\programacionlaboratorio c\misfunciones\funcionesgenericas\estructurauno.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"estructuraUno.h"
+	"funcionesGet.h"
+
+1557152194 source:c:\programacionlaboratorio c\misfunciones\funcionesgenericas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<string.h>
+	"estructuraUno.h"
+
+1557169026 c:\programacionlaboratorio c\misfunciones\funcionesgenericas\estructurauno.h
+
+1556657343 source:c:\programacionlaboratorio c\misfunciones\funcionesgenericas\funcionesget.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"funcionesGet.h"
+
+1556585880 c:\programacionlaboratorio c\misfunciones\funcionesgenericas\funcionesget.h
+

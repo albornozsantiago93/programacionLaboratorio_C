@@ -13,6 +13,7 @@ static int idAutoincrementable= 0;
  * \brief Genera un id que se ira autoincrementando
  * \param void
  * \return int, id unico generado
+ *
  */
 int array_generarProximoId(void)
 {
@@ -21,10 +22,13 @@ int array_generarProximoId(void)
 }
 
 
-/** \brief inicializa el estado de un array
- * \param eEmployee empleado, estructura de empleados
- * \param int cantidad, largo de array
- * \return int (-1) Error  - (0)  Ok
+/** \brief To indicate that all position in the array are empty,
+ * this function put the flag (isEmpty) in TRUE in all
+ * position of the array
+ * \param list Employee* Pointer to array of employees
+ * \param len int Array length
+ * \return int Return (-1) if Error [Invalid length or NULL pointer] - (0) if Ok
+ *
  */
 int initEmployees(eEmployee* empleados,int cantidad)
 {
@@ -41,10 +45,12 @@ int initEmployees(eEmployee* empleados,int cantidad)
 }
 
 
-/** \brief da por alta a un empleado en la estructura de eEmpleados
- * \param eEmployee empleado, estructura de empleados
- * \param int cantidad, largo de array
- * \return int  (-1)  - (0)  Ok
+/** \brief add in a existing list of employees the values received as parameters
+ * in the first empty position
+ * \param list employee*
+ * \param len int
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or without free space] - (0) if Ok
+ *
  */
 int addEmployee(eEmployee* empleados,int cantidad)
 {
@@ -78,11 +84,14 @@ int addEmployee(eEmployee* empleados,int cantidad)
 }
 
 
-/** \brief encuentra por id un dato de la estructura
- * \param eEmployee empleado, estructura de empleados
- * \param int cantidad, largo de array
- * \param int id, referencia a buscar
- * \return int  (-1)  - Numero id !=-1
+/** \brief find an Employee by Id en returns the index position in array.
+ *
+ * \param list Employee*
+ * \param len int
+ * \param id int
+ * \return Return employee index position or (-1) if [Invalid length or NULL
+pointer received or employee not found]
+ *
  */
 int findEmployeeById(eEmployee* empleados,int cantidad,int id)
  {
@@ -102,10 +111,14 @@ int findEmployeeById(eEmployee* empleados,int cantidad,int id)
  }
 
 
- /** \brief encuentra un lugar disponible en el array
- * \param eEmployee empleado, estructura de empleados
- * \param int cantidad, largo de array
- * \return int  (-1)  - Numero !=-1 (ubicacion disponible en array)
+ /** \brief find an Employee by Id en returns the free place position in array.
+ *
+ * \param list Employee*
+ * \param len int
+ * \param id int
+ * \return Return employee index position or (-1) if [Invalid length or NULL
+pointer received or employee not found]
+ *
  */
 int findIsEmpty(eEmployee* empleados,int cantidad)
  {
@@ -125,11 +138,13 @@ int findIsEmpty(eEmployee* empleados,int cantidad)
  }
 
 
- /** \brief realiza una baja logica colocando el estado en LIBRE
- * \param eEmployee empleado, estructura de empleados
- * \param int cantidad, largo de array
+ /** \brief Remove a Employee by Id (put isEmpty Flag in 1)
+ *
+ * \param list Employee*
+ * \param len int
  * \param id int
- * \return int  ERROR(-1)  - (0)  Ok
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or if can't find a employee] - (0) if Ok
+ *
  */
 int removeEmployee(eEmployee* empleados,int cantidad,int id)
  {
@@ -145,15 +160,17 @@ int removeEmployee(eEmployee* empleados,int cantidad,int id)
                  break;
              }
          }
+
      return retorno;
  }
 
 
- /** \brief imprime por pantalla una estructura de empleado
- * \param eEmployee empleado, estructura de empleados
- * \param eSector sectores, array de sectores
- * \param int cantidad de array
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void printEmployee(eEmployee empleado,eSector* sectores,int cantidad)
 {
@@ -172,11 +189,12 @@ void printEmployee(eEmployee empleado,eSector* sectores,int cantidad)
  }
 
 
-  /** \brief imprime por pantalla lista de empleados y su sector correspondiente
- * \param eEmployee empleado, estructura de empleados
- * \param eSector sectores, array de sectores
- * \return int cantidad de array
- * \return void
+  /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
  void printListEmployee(eEmployee* empleados,int cantidadEmpleados,eSector* sectores)
  {
@@ -192,11 +210,12 @@ void printEmployee(eEmployee empleado,eSector* sectores,int cantidad)
  }
 
 
- /** \brief modifica los datos de un empleado en la estructura
- * \param eEmployee empleado, estructura de empleados
- * \param int cantidad de array
+ /** \brief modifica datos en el arrey de empleados
+ * \param list employee*
+ * \param cantidad int
  * \param id int
- * \return int Return (-1)Error o (0) Ok
+ * \return int Return (-1) if Error [Invalid length or NULL pointer or without free space] - (0) if Ok
+ *
  */
 int modificarEmployee(eEmployee* empleados, int cantidad,int id)
 {
@@ -254,11 +273,12 @@ int modificarEmployee(eEmployee* empleados, int cantidad,int id)
 }
 
 
- /** \brief administra un empleado, alta baja modificar y listar
- * \param eEmployee empleado, estructura de empleados
- * \param eSector sectores, array de sectores
- * \param int cantidad array de empleados
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void administrarEmpleado(eEmployee* empleado,eSector* sectores,int cantidad)
 {
@@ -305,7 +325,7 @@ void administrarEmpleado(eEmployee* empleado,eSector* sectores,int cantidad)
 
         case 4://IMPRIMIR LISTA EMPLEADO
             system("cls");
-            printf("ID\tNOMBRE\t\tAPELLIDO\tSEXO\t\tSALARIO\t\tFECHA\t\tSECTOR\n\n");
+            printf("ID\tNOMBRE\t\tAPELLIDO\tSEXO\t\tSALARIO\t\tFECHA\t\tSECTOR\n");
             printListEmployee(empleado,cantidad,sectores);
             getChar("");
             break;
@@ -315,18 +335,20 @@ void administrarEmpleado(eEmployee* empleado,eSector* sectores,int cantidad)
 }
 
 
- /** \brief carga datos hardcodeados en la estructura de empleados
- * \param eEmployee empleado, estructura de empleados
- * \param int cantidad, largo de array
- * \return void
+ /** \brief print the content of employees array
+ *
+ * \param list Employee*
+ * \param length int
+ * \return int
+ *
  */
 void hardcodearDatosEmpleados(eEmployee* empleado, int cantidad)
 {
     int i;
-    char nombres[][50]= {"Josue","Maria","Carlos","Pedro","Sofia","Mateo"};
+    char nombres[][50]= {"Carlos","Maria","Carlos","Pedro","Carlos","Mateo"};
     char apellido[][50]= {"Lopez","Dias","Villa","Perez","Baez","Imbert"};
     float sueldosBruto[]= {22000,22000,15000,48000,21000,36000};
-    char sexo[][10]= {"M","F","M","M","F","M"};
+    char sexo[][10]= {"M","F","M","M","M","M"};
     int idSector[]= {1,2,3,1,2,2};
 
     eFecha unaFecha = {22,04,2019};

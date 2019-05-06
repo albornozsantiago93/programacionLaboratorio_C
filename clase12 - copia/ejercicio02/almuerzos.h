@@ -41,5 +41,3 @@ void hardcodearAlmuerzos(eAlmuerzo* almuerzos,int cantidadAlmuerzos);
 void menuesConsumidosFecha(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuerzos, int cantidadEmpleados, int cantidadMenues,eFechaAlmuerzo fecha);
 
 void empleadosConsumieronFecha(eEmployee* empleados, eMenu* menues, eAlmuerzo* almuerzos, int cantidadEmpleados, int cantidadMenues,eFechaAlmuerzo fecha);
-
- void menu_ordenarMenues(eMenu* menues,int cantidadMenues);
