@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1557878114 source:d:\albornoz santiago\clase14\ejercicio02\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alumno.h"
+
+1557878018 source:d:\albornoz santiago\clase14\ejercicio02\alumno.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alumno.h"
+
+1557877509 d:\albornoz santiago\clase14\ejercicio02\alumno.h
+
+1557878020 source:c:\programacionlaboratorio c\clase14\ejercicio02\alumno.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alumno.h"
+
+1557877510 c:\programacionlaboratorio c\clase14\ejercicio02\alumno.h
+
+1558126762 source:c:\programacionlaboratorio c\clase14\ejercicio02\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alumno.h"
+

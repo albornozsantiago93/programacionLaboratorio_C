@@ -1,0 +1,70 @@
+ARCHIVOS	
+	
+-	BINARIOS(CODIGO MAQUINA/BINARIO)se define a travez de estructuras-graba,guarda.//solo con la aplicacion
+
+-	TEXTO(TEXTO PLANO-solo se ven caracteres, no float ni int)// con editor ej word
+
+Todo se guarda de manera binaria
+
+
+ARCHIVOS -BIARIOS-
+
+FILE *fopen(char *nombre,char *modo);//abre el archivo,primordial.
+int fclose(FILE *fp);//cierra el archivo.
+int fcloseall(void);//cierra todos los arhcivos abiertos
+int fread(void *memoria,int num,int cont,FILE *fp);//lee lo q hay en el archivo y lo trae a las variables de la aplicacion
+int fwrite(void *memoria,int num,int cont,FILE *fp);//escribe lo q tienen mis variables al disco
+int feof(FILE *f);//devuelve un valor si se llego al final del archivo
+int ferror(FILE *fp);//avisa si hay error
+void rewind(FILE *fp);//rebobina el archivo"señalador de archivo" al comienzo
+int fseek(FILE *fp,long num,int origen);//permite moverme desde donde estoy del comienzo al final tantos bytes como quiera en el archivo
+long ftell(FILE *f);//decirme la cantidad de byte que hay desde al comienzo al final, digo comienzo y final y me dice cantidad de bytes
+int getc(FILE *fp);//se trabaja con archivo y no teclado
+int putc(int ch,FILE *fp);//es como printf pero con arhicovs
+char* fgets(char *str,int n,FILE *fp);//una cadena
+int fputs(const char *str,FILE *fp);
+int fscanf(FILE *fp,const char *formato[,dirección,...]);//igual q scanf pero levanta desde el archivo y no desde el teclado.le damos el dato a travez del arhivo
+int fprintf(FILE *fp,const char *formato[,argumento,...]);//imprime en un archivo de tipo texto
+
+El tipo de dato FILE
+
+Para trabajar con archivos en C, las funciones utilizan un puntero a la estructura FILE. Dicha
+estructura se encuentra definida en el archivo stdio.h y se detalla a continuación.
+
+typedef struct {
+int level; /* fill/empty level of buffer */
+unsigned flags; /* File status flags */
+char fd; /* File descriptor */
+unsigned char hold; /* Ungetc char if no buffer */
+int bsize; /* Buffer size */
+unsigned char _FAR *buffer; /* Data transfer buffer */
+unsigned char _FAR *curp; /* Current active pointer */
+unsigned istemp; /* Temporary file indicator */
+short token; /* Used for validity checking */
+}FILE;
+
+
+
+apertura archivo de texto sin -b-
+con b, binario
+con '+' la operacion sea para ambos 
+,r+b,w+b lectura y escritura
+a+b lectura y escritura al final 
+
+r+b, r+ apertura y escritura ambos, si no existe da error y apartir de ese error lo abre en w y crea el archivo
+w+b, w+ abro el archivo y sigo manteniendo los datos
+
+fflush(stdin);siempre antes del wrtite!!!
+fwrite(&pers,sizeof(pers),1,bin);
+
+
+
+fseek ( ptr , (long) (-1)*sizeof (struct x) , SEEK_CUR );// sirve para escribir en la estructura que se encontro la coincidencia
+por eso se debe volver una estructura anterior para que la modificacion sea sobre la ocurrencia
+
+
+long ftell (FILE * arch );
+Donde arch es el puntero a la estructura FILE asociada al archivo.
+Valor retornado: Si la operación es exitosa devuelve la cantidad de bytes que hay desde el
+commienzo del archivo hasta el lugar en que se encuentra el indicador de posición del archivo ,
+en caso contrario devuelve –1L (-1 como tipo long).//puede servir para saber cuanto pesa mi archivo

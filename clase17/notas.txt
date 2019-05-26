@@ -1,0 +1,36 @@
+struct persona *p;
+p=(struct persona*) malloc(sizeof(struct persona)*3);
+
+if(p!=NULL)
+	{
+		p->fecha.dia;
+		p->nombre;
+	}
+
+---------------------------------------------------------------------------------
+
+struct persona *p,*pAux;
+
+p=(struc persona*) realloc(p,sizeof(struct persona)*6); // es posible pero al devolver null se perderian los datos
+
+--solucion--
+
+pAux=(struc persona*) realloc(p,sizeof(struct persona)*6); // multiplico por el largo del array struct
+
+if(pAux!=NULL)
+p=pAux;
+
+-------------------------------------------------------------------------------------
+
+int *a; 
+	if ((a=(int *)malloc(sizeof(int)))==NULL) exit(0); /* Salimos del programa */ //...... 
+	free(a); 
+
+Un aspecto a tener en cuenta es el hecho de que el puntero a liberar no debe apuntar a nulo (NULL), pues en tal caso 
+se producirá un fallo en el programa. Es por ello que cobra aún más sentido la necesidad de comprobar al reservar, 
+memoria de forma dinámica que la reserva se ha realizado de forma correcta
+ tal y como se explicó anteriormente
+
+
+-------------------------------------------------------------------------------------
+
