@@ -7,16 +7,17 @@
 	"estructuraUno.h"
 	"funcionesGet.h"
 
-1557152194 source:c:\programacionlaboratorio c\misfunciones\funcionesgenericas\main.c
+1558985370 source:c:\programacionlaboratorio c\misfunciones\funcionesgenericas\main.c
 	<stdio.h>
 	<stdlib.h>
 	<strings.h>
 	<string.h>
 	"estructuraUno.h"
+	"funcionesArchivos.h"
 
-1557169026 c:\programacionlaboratorio c\misfunciones\funcionesgenericas\estructurauno.h
+1558985159 c:\programacionlaboratorio c\misfunciones\funcionesgenericas\estructurauno.h
 
-1556657343 source:c:\programacionlaboratorio c\misfunciones\funcionesgenericas\funcionesget.c
+1557170848 source:c:\programacionlaboratorio c\misfunciones\funcionesgenericas\funcionesget.c
 	<stdio.h>
 	<stdlib.h>
 	<strings.h>
@@ -24,4 +25,14 @@
 	"funcionesGet.h"
 
 1556585880 c:\programacionlaboratorio c\misfunciones\funcionesgenericas\funcionesget.h
+
+1558985476 source:c:\programacionlaboratorio c\misfunciones\funcionesgenericas\funcionesarchivos.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"funcionesArchivos.h"
+
+1558985426 c:\programacionlaboratorio c\misfunciones\funcionesgenericas\funcionesarchivos.h
+	"estructuraUno.h"
 
