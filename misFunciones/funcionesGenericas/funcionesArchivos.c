@@ -166,12 +166,12 @@ void arrayMovie_imprimir(eEstructuraUno* array,char* mensajeError,int lenght)
      if(pArchivo==NULL)
         retorno= -1;
 
-        cantEscrita= fscanf(pArchivo, "% [^\n]",&buffer);
+        cantEscrita= fscanf(pArchivo, "%s",buffer);
 
         while(cantEscrita!=EOF)
         {
-            printf("%%s\n",buffer);
-            cantEscrita= fscanf(pArchivo,"[^\n]",&buffer);
+            printf("%s\n",buffer);
+            cantEscrita= fscanf(pArchivo,"%s",buffer);
         }
      fclose(pArchivo);
      return retorno;
