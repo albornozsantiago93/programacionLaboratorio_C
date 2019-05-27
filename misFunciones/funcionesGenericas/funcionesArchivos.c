@@ -3,6 +3,7 @@
 #include <strings.h>
 #include <time.h>
 #include "funcionesArchivos.h"
+#include "funcionesGet.h"
 
 
 
@@ -117,4 +118,61 @@ void arrayMovie_imprimir(eEstructuraUno* array,char* mensajeError,int lenght)
 }
 
 
+  /**
+ * \brief escribe en el archivo de datos
+ * \param arrayMovie, array de la estructira recibida por referencia
+ * \param lenght, longitud del array
+ * \param mensajeError mensaje al usuario
+ * \return 0 OK  o -1 error
+ */
 
+ int cargarPersona()
+ {
+     FILE* pArchivo;
+     int retorno=0;
+     char nombre[21];
+     char* nombreArchivo= "texto";
+
+     pArchivo= fopen(nombreArchivo, "a");//agrega un nombre al final del texto
+     if(pArchivo==NULL)
+        retorno= -1;
+
+     getValidString("Ingrese nombre:\n","ERROR",nombre);
+
+     fprintf(pArchivo,"%s \n",nombre);
+
+     fclose(pArchivo);
+     return retorno;
+ }
+
+
+  /**
+ * \brief escribe en el archivo de datos
+ * \param arrayMovie, array de la estructira recibida por referencia
+ * \param lenght, longitud del array
+ * \param mensajeError mensaje al usuario
+ * \return 0 OK  o -1 error
+ */
+
+ int verPersona()
+ {
+     FILE* pArchivo;
+     char* nombreArchivo= "texto";
+     char buffer[200];
+     int cantEscrita=0;
+     int retorno=0;
+
+     pArchivo= fopen(nombreArchivo, "r");
+     if(pArchivo==NULL)
+        retorno= -1;
+
+        cantEscrita= fscanf(pArchivo, "% [^\n]",&buffer);
+
+        while(cantEscrita!=EOF)
+        {
+            printf("%%s\n",buffer);
+            cantEscrita= fscanf(pArchivo,"[^\n]",&buffer);
+        }
+     fclose(pArchivo);
+     return retorno;
+ }
