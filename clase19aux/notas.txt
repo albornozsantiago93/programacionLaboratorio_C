@@ -1,0 +1,9 @@
+
+binario
+	-fwrite
+	-fread
+
+
+texto
+	-fgets
+	-
