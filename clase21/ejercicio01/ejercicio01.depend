@@ -1,0 +1,95 @@
+# depslib dependency file v1.0
+1559602730 source:d:\albornoz santiago\clase20\ejercicio01\funciones.c
+	"funciones.h"
+	"funcionesGet.h"
+
+1559602730 d:\albornoz santiago\clase20\ejercicio01\funciones.h
+
+1557243614 d:\albornoz santiago\clase20\ejercicio01\funcionesget.h
+
+1557246402 source:d:\albornoz santiago\clase20\ejercicio01\funcionesget.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"funcionesGet.h"
+
+1559608669 source:d:\albornoz santiago\clase20\ejercicio01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesGet.h"
+
+1559681635 source:c:\programacionlaboratorio c\clase20\ejercicio01\funcionesget.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"funcionesGet.h"
+
+1559680997 c:\programacionlaboratorio c\clase20\ejercicio01\funcionesget.h
+
+1559681649 source:c:\programacionlaboratorio c\clase20\ejercicio01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesGet.h"
+
+1559701752 source:d:\albornoz santiago\clase21\ejercicio01\funcionesget.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"funcionesGet.h"
+
+1559680998 d:\albornoz santiago\clase21\ejercicio01\funcionesget.h
+
+1559705076 source:d:\albornoz santiago\clase21\ejercicio01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesGet.h"
+	"persona.h"
+
+1559704624 d:\albornoz santiago\clase21\ejercicio01\persona.h
+
+1559704644 source:d:\albornoz santiago\clase21\ejercicio01\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesGet.h"
+	"persona.h"
+
+1559706881 source:d:\albornoz santiago\clase21\ejercicio01\lista.c
+
+1559701754 source:c:\programacionlaboratorio c\clase21\ejercicio01\funcionesget.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"funcionesGet.h"
+
+1559680998 c:\programacionlaboratorio c\clase21\ejercicio01\funcionesget.h
+
+1559707838 source:c:\programacionlaboratorio c\clase21\ejercicio01\lista.c
+	"lista.h"
+
+1560119549 c:\programacionlaboratorio c\clase21\ejercicio01\lista.h
+	"persona.h"
+
+1560119652 c:\programacionlaboratorio c\clase21\ejercicio01\persona.h
+
+1560120277 source:c:\programacionlaboratorio c\clase21\ejercicio01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesGet.h"
+	"persona.h"
+
+1560121878 source:c:\programacionlaboratorio c\clase21\ejercicio01\persona.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesGet.h"
+	"persona.h"
+

@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1559602730 source:d:\albornoz santiago\clase20\ejercicio01\funciones.c
+	"funciones.h"
+	"funcionesGet.h"
+
+1559602730 d:\albornoz santiago\clase20\ejercicio01\funciones.h
+
+1557243614 d:\albornoz santiago\clase20\ejercicio01\funcionesget.h
+
+1557246402 source:d:\albornoz santiago\clase20\ejercicio01\funcionesget.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"funcionesGet.h"
+
+1559608669 source:d:\albornoz santiago\clase20\ejercicio01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesGet.h"
+
+1559763733 source:c:\programacionlaboratorio c\clase20\ejercicio01\funcionesget.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<time.h>
+	"funcionesGet.h"
+
+1559680997 c:\programacionlaboratorio c\clase20\ejercicio01\funcionesget.h
+
+1559764010 source:c:\programacionlaboratorio c\clase20\ejercicio01\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funcionesGet.h"
+	"funciones.h"
+
+1559763645 source:c:\programacionlaboratorio c\clase20\ejercicio01\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+	"funcionesGet.h"
+
+1559763630 c:\programacionlaboratorio c\clase20\ejercicio01\funciones.h
+

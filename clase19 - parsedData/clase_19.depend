@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1540854681 source:d:\dfernandez\clase_19\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1540855171 source:d:\albornoz santiago\clase_19\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1559147776 source:c:\programacionlaboratorio c\clase_19\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1559147776 source:c:\programacionlaboratorio c\clase19 - parseddata\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
