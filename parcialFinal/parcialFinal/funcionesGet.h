@@ -17,3 +17,5 @@ void getValidString(char* mensaje,char* mensajeError,char* input);
 void getValidStringAlfaNumerico(char* mensaje,char* mensajeError, char* input);
 char getNumeroAleatorio(int desde, int hasta, int iniciar);
 void getCaracterSexo(char* mensaje,char* mensajeError,char* input);
+int validarInt(char *input);
+int validarString(char*input);

@@ -410,5 +410,66 @@ void getValidString(char* mensaje,char* mensajeError,char* input)
  }
 
 
+/**
+ * \brief valida un numero int
+ * \param input, cadena que evaluara que sea int
+ * \return -1ERROR - 0 OK
+ */
+int validarInt(char *input)
+{
+    int retorno=-1;
+    int i=0;
 
+    do
+    {
+        if(*(input+i)<48||*(input+i)>57)
+        {
+            break;
+        }
+        i++;
+    }while(i<strlen(input));
+
+
+        if(i==strlen(input))
+        {
+            retorno=0;
+        }
+
+    return retorno;
+}
+
+
+/**
+ * \brief valida una cadena de caracteres
+ * \param input, cadena que evaluara que sea solo cadena de caracteres
+ * \return -1ERROR - 0 OK
+ */
+int validarString(char*input)
+{
+    int retorno=-1;
+    int i=0;
+
+    if(input!=NULL)
+    {
+        do
+        {
+            if(*(input+i)==' '||*(input+i)=='-')
+            {
+                i++;
+                continue;
+            }
+            if((*(input+i)<65||*(input+i)>90) && (*(input+i)<97||*(input+i)>122))
+            {
+                break;
+            }
+            i++;
+        }while(i<strlen(input));
+
+        if(i==strlen(input))
+        {
+            retorno=0;
+        }
+    }
+    return retorno;
+}
 
